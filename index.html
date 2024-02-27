@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles/main.css">
+    <title>CRUD with FireBase</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    JavaScript CRUD
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="crud-container">
+            <div class="crud-heder">
+                <h1>Mascostas Registradas</h1>
+                <button class="button is-success" id="openRegisterModal">Nueva Mascota</button>
+            </div>
+            <table class="table" id="tabla">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>AP</th>
+                        <th>AM</th>
+                        <th>Tel</th>
+                        <th>Email</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>Juan</td>
+                        <td>Gomez</td>
+                        <td>Meza</td>
+                        <td>3115818090</td>
+                        <td>nihlgomez@gmail.com</td>
+                        <td>
+                            <button class="button is-warning">Edit</button>
+                            <button class="button is-danger">Delate</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <div class="modal" id="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Register Your littelPet</p>
+                <button class="delete" aria-label="close" id="closeRegisterModal"></button>
+            </header>
+            <section class="modal-card-body">
+                <form id="registerForm">
+                    <div class="field">
+                        <label class="label">Name</label>
+                        <div class="control">
+                            <input class="input" 
+                            type="text" 
+                            name="name" 
+                            placeholder="Your Name">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Apellido Paterno</label>
+                        <div class="control">
+                            <input class="input" 
+                            type="text" 
+                            name="apePat" 
+                            placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Apellido Materno</label>
+                        <div class="control">
+                            <input class="input" 
+                            type="text" 
+                            name="apeMat" 
+                            placeholder="last Name">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Telefono</label>
+                        <div class="control has-icons-left ">
+                            <input class="input" 
+                            type="tel" 
+                            name="tel"
+                            placeholder="+57 311234343">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-phone"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control has-icons-left ">
+                            <input class="input " 
+                            type="email" 
+                            name="email" 
+                            placeholder="SomeOne@gmail.com">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Description</label>
+                        <div class="control">
+                            <textarea class="textarea" 
+                            name="desp" 
+                            placeholder="Textarea"></textarea>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Content ... -->
+                    <footer class="modal-card-foot">
+                        <button class="button is-success" type="submit" id="registrar">Registrar</button>
+                    </footer>
+                </form>
+            </section>
+
+        </div>
+    </div>
+    <script type="module" src="./JS/app.js">
+       
+    </script>
+</body>
+
+</html>
