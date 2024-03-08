@@ -21,7 +21,7 @@ where C.Name = 'Colombia';
 -- Mostrar la 5 ciudades más pobladas de América, Europa, Asia y África. Ordenar el
 -- informe por Continente, luego descendentemente por ciudades
 
-SELECT C.continent,  B.Name , B.Population
+SELECT C.continent,  B.Name , FORMAT(B.Population, 0)
 FROM country as C
 LEFT JOIN city as B
 ON C.Code = B.countryCode
@@ -69,3 +69,9 @@ c1.Population > (SELECT
 AVG(C2.Population)
 FROM city as C2
 where C2.countryCode = C1.country);
+
+-- ventaja de los JOIN es que ellos cruzan indices 
+-- DISTINCT se utilza para que no se repitan exclusivo para un campo
+ ADD    
+ -- principio de induccion matematica
+ 
