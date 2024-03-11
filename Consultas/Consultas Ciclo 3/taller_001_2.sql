@@ -91,3 +91,4 @@ WHERE wage > (SELECT AVG(wage) FROM members WHERE position = 'Violinista');
 SELECT name, year_founded, rating
 FROM orchestras
 WHERE  year_founded > (SELECT year_founded FROM orchestras WHERE name = 'Orquesta Sinfónica de Boston') AND rating > 4.6 ;
+
