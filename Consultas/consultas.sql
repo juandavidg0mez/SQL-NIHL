@@ -165,3 +165,6 @@ where locate(' ' , name ) > 0
 order by pais;
 
 -- TRIM quita espacion al principios y al final RTRIM derecha osea el final LTRIM a la izquierda
+
+
+USE world;

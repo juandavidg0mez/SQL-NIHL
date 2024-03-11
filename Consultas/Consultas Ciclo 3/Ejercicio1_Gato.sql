@@ -10,3 +10,7 @@ from catTabla;
 select id, name, breed, coloracion, sex , fav_toy , if(sex = female and fav_toy <> null , 'aplica' , 'no aplica') as 'columSex'
 from catTabla
 where breed <> presa and breed <> siamesa;
+
+USE world;
+
+SELECT * FROM country;
