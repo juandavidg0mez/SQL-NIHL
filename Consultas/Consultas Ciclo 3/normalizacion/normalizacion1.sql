@@ -104,16 +104,17 @@ CREATE TABLE Medico(
 );
 
 CREATE TABLE Tratamiento(
-    tratamiento_ID INT PRIMARY KEY
+    tratamiento_ID INT PRIMARY KEY,
     DescripcionTra VARCHAR(255),
-    cita_ID_Tratamiento INT,
+    cita_ID_Tratamiento INT
     Foreign Key (cita_ID_Tratamiento) REFERENCES Citas(cita_ID)
 );
 
 
 CREATE TABLE Drug_For_Tratamiento(
     tratamiento_ID INT,
-    Drugs INT,
+    Drugs_id INT,
+    PRIMARY KEY(tratamiento_ID,Drugs_id)
     Foreign Key (tratamiento_ID) REFERENCES Tratamiento(tratamiento_ID),
     Foreign Key (Drugs_id) REFERENCES Drugs(Drugs_id)
 );
@@ -133,4 +134,16 @@ CREATE TABLE Citas(
     Tratamiento_citas VARCHAR(100),
     Foreign Key (Paciente_ID_Cita) REFERENCES Paciente_ID(Paciente_ID),
     Foreign Key (Medico_ID_Cita) REFERENCES Medico(Medico_ID)
+    
 );
+
+
+-- paciente fueron trataos enel 20022 indique id del paciente 
+--el nombredel pacioete fecha consilta
+--nombre medico y el tratamiento recibido
+
+SELECT B.Paciente_id, B.Nombre_Paciente, B.FechaCita, B.NombreMedico, T.Tratamiento_ivar
+FROM Citas as B
+LEFT JOIN Tratamiento as T
+ON B.cita_ID =  T.tratamiento_ID
+WHERE B.FechaCita = 2022;
