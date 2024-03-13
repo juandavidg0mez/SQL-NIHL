@@ -131,7 +131,6 @@ CREATE TABLE Citas(
     Medico_ID_Cita INT,
     FechaCita DATETIME,
     Descripcion_Cita VARCHAR(255),
-    Tratamiento_citas VARCHAR(100),
     Foreign Key (Paciente_ID_Cita) REFERENCES Paciente_ID(Paciente_ID),
     Foreign Key (Medico_ID_Cita) REFERENCES Medico(Medico_ID)
     
@@ -142,8 +141,9 @@ CREATE TABLE Citas(
 --el nombredel pacioete fecha consilta
 --nombre medico y el tratamiento recibido
 
-SELECT B.Paciente_id, B.Nombre_Paciente, B.FechaCita, B.NombreMedico, T.Tratamiento_ivar
+SELECT B.Paciente_id, P.Nombre_Paciente, B.FechaCita, M.NombreMedico, T.Tratamiento_ivar
 FROM Citas as B
-LEFT JOIN Tratamiento as T
-ON B.cita_ID =  T.tratamiento_ID
+LEFT JOIN Tratamiento AS T ON B.cita_ID =  T.tratamiento_ID
+LEFT JOIN Paciente_ID AS P ON P.Paciente_ID = B.cita_ID
+LEFT JOIN Medico AS M ON M.Medico_ID = B.cita_ID
 WHERE B.FechaCita = 2022;
