@@ -27,7 +27,7 @@ SELECT  F.nombre, P.id_fabricante, COUNT(P.id_fabricante) AS Numero_Neto_Fabrica
 FROM producto  AS P
 JOIN fabricante AS F 
 ON F.id = P.id_fabricante
-GROUP BY id_fabricante;
+GROUP BY id_fabricante; 
 
 /*
 4. Calcula la media del precio de todos los productos.
@@ -58,12 +58,12 @@ dos columnas, una con el nombre del fabricante y otra con el número de producto
 Ordene el resultado descendentemente por el número de productos.
 */
 
-SELECT  F.nombre, COUNT(P.id_fabricante) AS Numero_Neto_Productos
+SELECT  F.nombre, COUNT(P.nombre) AS Numero_Neto_Productos
 FROM producto  AS P
-INNER JOIN fabricante AS F 
+LEFT JOIN fabricante AS F 
 ON F.id = P.id_fabricante
-GROUP BY id_fabricante
-ORDER BY Numero_Neto_Productos DESC;
+GROUP BY F.nombre
+ORDER BY Numero_Neto_Productos DESC;        
 
 /*
 7. Muestra el precio máximo, precio mínimo y precio medio de los productos de cada uno de los
@@ -113,11 +113,11 @@ SELECT  F.id,
         AVG(P.precio) AS Precio_Medio,
         COUNT(P.id_fabricante) AS Cantidad_Products
 FROM producto  AS P
-JOIN fabricante AS F 
+LEFT JOIN fabricante AS F 
 ON F.id = P.id_fabricante
 GROUP BY P.id_fabricante
-HAVING AVG(P.precio)  > 200;
-
+HAVING AVG(P.precio)  > 200;                
+        
 /*
 10. Calcula el número de productos que tienen un precio mayor o igual a 180€.
 */
@@ -138,3 +138,5 @@ RIGHT JOIN producto AS P
 ON F.id = P.id_fabricante
 WHERE P.precio >= 180 
 GROUP BY F.nombre;
+
+-- EN LO POSIBLE AGRUPAR POR LLAVES POR PRIMARIAS
