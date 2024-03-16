@@ -38,3 +38,15 @@ CALL RegistrarCliente('Cliente 2', 'cliente2@example.com');
 CALL RegistrarCliente('Cliente 3', 'cliente3@example.com');
 CALL RegistrarCliente('Cliente 4', 'cliente4@example.com');
 CALL RegistrarCliente('Cliente 5', 'cliente5@example.com');
+
+CALL RealizarVenta(1, 1, 2); -- Venta del Producto 1 al Cliente 1 con cantidad 2
+CALL RealizarVenta(2, 2, 1); -- Venta del Producto 2 al Cliente 2 con cantidad 1
+CALL RealizarVenta(3, 3, 3); -- Venta del Producto 3 al Cliente 3 con cantidad 3
+CALL RealizarVenta(4, 4, 2); -- Venta del Producto 4 al Cliente 4 con cantidad 2
+CALL RealizarVenta(5, 5, 1); -- Venta del Producto 5 al Cliente 5 con cantidad 1
+CALL RealizarVenta(1, 2, 1); -- Venta del Producto 1 al Cliente 2 con cantidad 1
+CALL RealizarVenta(2, 3, 2); -- Venta del Producto 2 al Cliente 3 con cantidad 2
+CALL RealizarVenta(3, 4, 1); -- Venta del Producto 3 al Cliente 4 con cantidad 1
+CALL RealizarVenta(4, 5, 3); -- Venta del Producto 4 al Cliente 5 con cantidad 3
+CALL RealizarVenta(5, 1, 2); -- Venta del Producto 5 al Cliente 1 con cantidad 2
+
