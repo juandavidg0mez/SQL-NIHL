@@ -94,7 +94,7 @@ SELECT C.Continent, C.Name, L.Language , C.Population
 FROM country as C
 LEFT JOIN countrylanguage as L
 ON C.Code = L.CountryCode
-WHERE Continent = 'Asia' 
+WHERE Continent = 'Asia' AND  Language = 'Spanish' 
 ORDER BY  L.Language DESC;
--- AND  Language = 'Spanish'
+
 
